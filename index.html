@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cloud Archive Controller</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <div class="logo">☁️</div>
+
+            <div>
+                <h1>Cloud Archive Controller</h1>
+                <p>AWS S3 Manual Archive System</p>
+            </div>
+
+            <div class="connection">
+                <span class="dot"></span>
+                System Online
+            </div>
+        </header>
+
+
+        <!-- Main Dashboard -->
+        <main>
+
+            <!-- Left Section -->
+            <section class="files-section">
+
+                <div class="section-title">
+                    <div>
+                        <h2>📁 S3 Storage</h2>
+                        <p>Select an old file to archive</p>
+                    </div>
+
+                    <span class="file-count">3 Files</span>
+                </div>
+
+
+                <!-- File 1 -->
+                <div class="file-card" onclick="selectFile(this, 'report_2024.pdf')">
+
+                    <div class="file-icon">📄</div>
+
+                    <div class="file-info">
+                        <h3>report_2024.pdf</h3>
+                        <p>PDF Document • 2.4 MB</p>
+                    </div>
+
+                    <div class="file-age">
+                        1 year old
+                    </div>
+
+                </div>
+
+
+                <!-- File 2 -->
+                <div class="file-card" onclick="selectFile(this, 'backup_old.zip')">
+
+                    <div class="file-icon">📦</div>
+
+                    <div class="file-info">
+                        <h3>backup_old.zip</h3>
+                        <p>Archive File • 15.8 MB</p>
+                    </div>
+
+                    <div class="file-age">
+                        2 years old
+                    </div>
+
+                </div>
+
+
+                <!-- File 3 -->
+                <div class="file-card" onclick="selectFile(this, 'student_data.csv')">
+
+                    <div class="file-icon">📊</div>
+
+                    <div class="file-info">
+                        <h3>student_data.csv</h3>
+                        <p>CSV File • 5.2 MB</p>
+                    </div>
+
+                    <div class="file-age">
+                        1 year old
+                    </div>
+
+                </div>
+
+
+                <!-- Archive Button -->
+                <button class="archive-btn" onclick="archiveFile()">
+
+                    <span class="button-icon">🔘</span>
+
+                    <span>
+                        <strong>ARCHIVE FILE</strong>
+                        <small>Move selected file to archive</small>
+                    </span>
+
+                </button>
+
+            </section>
+
+
+            <!-- Right Section -->
+            <section class="status-section">
+
+                <div class="status-card">
+
+                    <div class="status-icon" id="statusIcon">
+                        🔔
+                    </div>
+
+                    <h2 id="statusTitle">Ready</h2>
+
+                    <p id="statusMessage">
+                        Select an S3 file and press the Archive button.
+                    </p>
+
+                </div>
+
+
+                <!-- Virtual Buzzer -->
+                <div class="buzzer-card">
+
+                    <div class="buzzer-header">
+                        <span>🔊</span>
+                        <h3>Virtual Buzzer</h3>
+                    </div>
+
+                    <div class="buzzer">
+                        <div class="buzzer-light" id="buzzerLight"></div>
+                    </div>
+
+                    <p id="buzzerText">
+                        Waiting for archive action
+                    </p>
+
+                </div>
+
+
+                <!-- AWS Services -->
+                <div class="services">
+
+                    <h3>AWS Services</h3>
+
+                    <div class="service">
+                        <span>🗄️</span>
+                        <div>
+                            <strong>Amazon S3</strong>
+                            <small>File Storage</small>
+                        </div>
+                        <span class="active">●</span>
+                    </div>
+
+                    <div class="service">
+                        <span>⚡</span>
+                        <div>
+                            <strong>AWS Lambda</strong>
+                            <small>Archive Processing</small>
+                        </div>
+                        <span class="waiting">●</span>
+                    </div>
+
+                    <div class="service">
+                        <span>📢</span>
+                        <div>
+                            <strong>Amazon SNS</strong>
+                            <small>Notifications</small>
+                        </div>
+                        <span class="waiting">●</span>
+                    </div>
+
+                    <div class="service">
+                        <span>🔄</span>
+                        <div>
+                            <strong>S3 Lifecycle</strong>
+                            <small>Automatic Archiving</small>
+                        </div>
+                        <span class="active">●</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer>
+            <span>☁️ AWS Cloud Computing Project</span>
+            <span>Archive Button System v1.0</span>
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,511 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top left, #263b72, transparent 40%),
+        radial-gradient(circle at bottom right, #321b57, transparent 40%),
+        #090d1c;
+
+    color: white;
+}
+
+
+/* Main Container */
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+
+/* Header */
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 25px 30px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+
+    margin-bottom: 25px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border-radius: 15px;
+
+    font-size: 28px;
+}
+
+header h1 {
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #aeb8d0;
+}
+
+.connection {
+    margin-left: auto;
+
+    padding: 10px 15px;
+
+    background: rgba(46, 204, 113, 0.12);
+
+    border: 1px solid rgba(46, 204, 113, 0.25);
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    color: #70e6a0;
+}
+
+.dot {
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+
+    background: #38e878;
+
+    border-radius: 50%;
+
+    margin-right: 7px;
+}
+
+
+/* Main */
+
+main {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 25px;
+}
+
+
+/* Sections */
+
+.files-section,
+.status-section {
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* Section Title */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+.section-title h2 {
+    font-size: 21px;
+}
+
+.section-title p {
+    color: #9da8c2;
+    margin-top: 5px;
+}
+
+.file-count {
+    background: rgba(100, 130, 255, 0.15);
+
+    padding: 8px 13px;
+
+    border-radius: 20px;
+
+    color: #9eb2ff;
+
+    font-size: 13px;
+}
+
+
+/* File Card */
+
+.file-card {
+    display: flex;
+
+    align-items: center;
+
+    padding: 18px;
+
+    margin-bottom: 12px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid transparent;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.file-card:hover {
+    background: rgba(255, 255, 255, 0.09);
+
+    transform: translateY(-2px);
+}
+
+.file-card.selected {
+    border-color: #708cff;
+
+    background: rgba(95, 120, 255, 0.13);
+}
+
+.file-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-radius: 12px;
+
+    font-size: 21px;
+
+    margin-right: 15px;
+}
+
+.file-info {
+    flex: 1;
+}
+
+.file-info h3 {
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+.file-info p {
+    color: #8995b0;
+
+    font-size: 12px;
+}
+
+.file-age {
+    color: #a6b0c7;
+
+    font-size: 12px;
+}
+
+
+/* Archive Button */
+
+.archive-btn {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #627cff, #8c5cff);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    transition: 0.25s;
+}
+
+.archive-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 30px rgba(90, 90, 255, 0.3);
+}
+
+.archive-btn:active {
+    transform: scale(0.98);
+}
+
+.button-icon {
+    font-size: 24px;
+}
+
+.archive-btn strong {
+    display: block;
+
+    font-size: 15px;
+}
+
+.archive-btn small {
+    display: block;
+
+    margin-top: 3px;
+
+    opacity: 0.75;
+}
+
+
+/* Status */
+
+.status-card {
+    text-align: center;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border-radius: 16px;
+}
+
+.status-icon {
+    font-size: 45px;
+
+    margin-bottom: 12px;
+}
+
+.status-card h2 {
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.status-card p {
+    color: #929db7;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* Buzzer */
+
+.buzzer-card {
+    text-align: center;
+
+    margin-top: 18px;
+
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border-radius: 16px;
+}
+
+.buzzer-header {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+}
+
+.buzzer-header h3 {
+    font-size: 15px;
+}
+
+.buzzer {
+    width: 80px;
+    height: 80px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #181d32;
+
+    border: 4px solid #303750;
+}
+
+.buzzer-light {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: #353b52;
+
+    transition: 0.2s;
+}
+
+.buzzer-light.active {
+    background: #54f28a;
+
+    box-shadow:
+        0 0 15px #54f28a,
+        0 0 35px #54f28a;
+}
+
+.buzzer-card p {
+    color: #858fa8;
+
+    margin-top: 13px;
+
+    font-size: 12px;
+}
+
+
+/* AWS Services */
+
+.services {
+    margin-top: 18px;
+}
+
+.services h3 {
+    font-size: 15px;
+
+    margin-bottom: 12px;
+}
+
+.service {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    margin-bottom: 8px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border-radius: 10px;
+}
+
+.service div {
+    flex: 1;
+}
+
+.service strong {
+    display: block;
+
+    font-size: 12px;
+}
+
+.service small {
+    color: #7e89a3;
+
+    font-size: 10px;
+}
+
+.active {
+    color: #52e38a;
+}
+
+.waiting {
+    color: #f1b94c;
+}
+
+
+/* Footer */
+
+footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+    color: #69738b;
+
+    font-size: 11px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 850px) {
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-wrap: wrap;
+    }
+
+    .connection {
+        margin-left: 0;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .container {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .files-section,
+    .status-section {
+        padding: 18px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .file-age {
+        display: none;
+    }
+
+}
